@@ -39,7 +39,7 @@ static void	ft_fill(char *str, int n, int d)
 	}
 }
 
-char	*ft_minint(void)
+static char	*ft_minint(void)
 {
 	char	*a;
 

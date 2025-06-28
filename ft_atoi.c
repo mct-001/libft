@@ -6,11 +6,9 @@
 /*   By: mutopal <mutopal@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 18:30:35 by mutopal           #+#    #+#             */
-/*   Updated: 2025/06/19 22:14:24 by mutopal          ###   ########.fr       */
+/*   Updated: 2025/06/26 22:24:34 by mutopal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 static void	ft_skip(const char *str, int *i)
 {

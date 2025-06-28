@@ -6,7 +6,7 @@
 /*   By: mutopal <mutopal@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 20:13:24 by mutopal           #+#    #+#             */
-/*   Updated: 2025/06/21 10:26:33 by mutopal          ###   ########.fr       */
+/*   Updated: 2025/06/26 22:46:37 by mutopal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,11 @@ static int	ft_fill(char **strs, const char *s, char c)
 		len = ft_sstrlen(&s[i], c);
 		strs[j] = ft_copy(&s[i], len);
 		if (!strs[j])
+		{
+			while (--j >= 0)
+				free(strs[j]);
 			return (0);
+		}
 		i += len;
 		j++;
 	}
@@ -94,6 +98,9 @@ char	**ft_split(char const *s, char c)
 	if (!strs)
 		return (NULL);
 	if (!ft_fill(strs, s, c))
+	{
+		free(strs);
 		return (NULL);
+	}
 	return (strs);
 }

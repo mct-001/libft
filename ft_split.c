@@ -6,7 +6,7 @@
 /*   By: mutopal <mutopal@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 20:13:24 by mutopal           #+#    #+#             */
-/*   Updated: 2025/06/26 22:46:37 by mutopal          ###   ########.fr       */
+/*   Updated: 2025/07/04 22:09:43 by mutopal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_wc(const char *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i])
+		if (s[i] && s[i] != c)
 			count++;
 		while (s[i] && s[i] != c)
 			i++;
@@ -94,7 +94,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	strs = malloc((ft_wc(s, c) + 1) * 8);
+	strs = malloc((ft_wc(s, c) + 1) * sizeof(char *));
 	if (!strs)
 		return (NULL);
 	if (!ft_fill(strs, s, c))

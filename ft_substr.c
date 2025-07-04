@@ -6,7 +6,7 @@
 /*   By: mutopal <mutopal@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 00:37:24 by mutopal           #+#    #+#             */
-/*   Updated: 2025/06/28 18:32:06 by mutopal          ###   ########.fr       */
+/*   Updated: 2025/07/04 23:14:42 by mutopal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,18 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	slen;
 
-	slen = 0;
-	while (s[slen])
-		slen++;
-	if (start >= slen || !len || !s)
+	if (!s)
+		return (NULL);
+	slen = ft_strlen(s);
+	if (start >= slen || len == 0)
 		return (ft_strdup(""));
 	if (len > slen - start)
 		len = slen - start;
-	str = malloc(len + 1);
+	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (s[start + i] && i < len)
+	while (i < len && s[start + i])
 	{
 		str[i] = s[start + i];
 		i++;

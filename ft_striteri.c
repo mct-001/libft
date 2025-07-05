@@ -6,7 +6,7 @@
 /*   By: mutopal <mutopal@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/08 00:31:42 by mutopal           #+#    #+#             */
-/*   Updated: 2025/06/26 22:24:37 by mutopal          ###   ########.fr       */
+/*   Updated: 2025/07/05 06:55:59 by mutopal          ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
 	while (s[i] != '\0')
 	{
